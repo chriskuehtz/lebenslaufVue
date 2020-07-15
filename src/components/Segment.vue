@@ -10,10 +10,37 @@
       </h1>
     </div>
     <div v-if="collapsed === false">
-      <div class="container">
-        <div v-for="l in data.list" :key="l">
-          <div class="item">
-            <Card :data="l" />
+      <div v-if="data.hasOwnProperty('searchbar')">
+        <input
+          id="searchbar"
+          type="text"
+          placeholder="Suche nach einem Skill"
+          v-model="search"
+        />
+      </div>
+
+      <div v-if="search === ''">
+        <div class="container">
+          <div v-for="l in data.list" :key="l">
+            <div class="item">
+              <Card :data="l" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="container">
+          <div
+            v-for="l in data.list.filter((l) =>
+              l.skills
+                .map((s) => s.text.toLowerCase())
+                .includes(search.toLowerCase())
+            )"
+            :key="l"
+          >
+            <div class="item">
+              <Card :data="l" />
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +59,7 @@ export default {
     data: Object,
   },
   data() {
-    return { collapsed: true };
+    return { collapsed: true, search: "" };
   },
   methods: {
     setCollapsed() {
@@ -51,6 +78,14 @@ export default {
   padding-left: 5%;
   padding-right: 5%;
   color: #2c3e50;
+}
+#searchbar {
+  color: #2c3e50;
+  font-size: 2em;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 0.5em;
 }
 .title {
   width: 100%;

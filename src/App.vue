@@ -20,6 +20,7 @@ export default {
       stuff: {
         projects: {
           title: "Web Development Projekte",
+          searchbar: true,
           list: [
             {
               name: "Dieser Lebenslauf",
@@ -28,10 +29,15 @@ export default {
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "Vue", icon: "fab fa-vuejs" },
               ],
-              links: [{ http: "", name: "Github" }],
+              links: [
+                {
+                  http: "https://github.com/chriskuehtz/lebenslaufVue",
+                  name: "Github",
+                },
+              ],
             },
             {
               name: "BurgerAI",
@@ -41,7 +47,7 @@ export default {
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
                 { text: "Bootstrap CSS" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "PHP", icon: "fab fa-php" },
                 { text: "MySQL" },
               ],
@@ -54,7 +60,7 @@ export default {
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
                 { text: "Netlify JamStack" },
                 { text: "FaunaDB" },
@@ -68,33 +74,13 @@ export default {
               ],
             },
             {
-              name: "AppliTrack",
-              text:
-                "Applitrack hilft Bewerbern, ihre Job Bewerbungen im Überblick zu behalten. Zum Ausprobieren wieder  User/PW :guest/guest",
-              skills: [
-                { text: "HTML" },
-                { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
-                { text: "React", icon: "fab fa-react" },
-                { text: "Netlify JamStack" },
-                { text: "FaunaDB" },
-              ],
-              links: [
-                {
-                  http: "https://github.com/chriskuehtz/applitrackFauna",
-                  name: "Github",
-                },
-                { http: "", name: "AppliTrack" },
-              ],
-            },
-            {
-              name: "PokemonMapMaker",
+              name: "Pokemon Map Maker",
               text:
                 "Ich arbeite zusammen mit meiner Freundin an einem Pokemon Spiel, das wir zu zweit spielen können. Um die Maps für das Spiel zu erstellen, habe ich eine React Application geschrieben. Applikationen wie diese zeigen, wozu moderne Frontend Frameworks in der Lage sind und das der Browser in gewisser Weise das neue Betriebssystem ist.",
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
               ],
               links: [
@@ -102,17 +88,20 @@ export default {
                   http: "https://github.com/chriskuehtz/pokemonmm",
                   name: "Github",
                 },
-                { http: "", name: "AppliTrack" },
+                {
+                  http: "https://pokemonmm.netlify.app",
+                  name: "PokemonMapMaker",
+                },
               ],
             },
             {
-              name: "PokemonBattleSystem",
+              name: "Pokemon Battle System",
               text:
                 "Das Kampf System für das Pokemon Spiel. Dieses System ist die beste Programmierübung, die ich bis jetzt hatte. Jede Runde jedes Kampfes muss mit vielen verschiedenen Parametern und Ausnahmefällen trotzdem gleich ablaufen. ",
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
               ],
               links: [
@@ -134,7 +123,7 @@ export default {
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
                 { text: "Angular", icon: "fab fa-angular" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
               ],
               links: [
                 {
@@ -142,15 +131,15 @@ export default {
                   name: "Github",
                 },
                 {
-                  http: "",
-                  name: "PokemonBattleSystem",
+                  http: "https://hopfengarten.netlify.app",
+                  name: "Hopfengarten",
                 },
               ],
             },
           ],
         },
         softwareExperience: {
-          title: "Andere Programmiererfahrung",
+          title: "Andere Programmier-Erfahrung",
           list: [
             {
               name: "dev.jetzt Bootcamp",
@@ -159,7 +148,7 @@ export default {
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
                 { text: "Node.js", icon: "fab fa-node-js" },
                 { text: "Postgres" },
@@ -173,7 +162,7 @@ export default {
               text:
                 "Auf Entwicklerheld.de löse ich in meiner Freizeit Coding Challenges in fast allen Sprachen und zu verschiedenen Tehmenbereichen. Ich bin (gerade so) unter den Top 100 Nutzern.",
               skills: [
-                { text: "JavaScript", icon: "fab fa-js-square" },
+                { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "Java", icon: "fab fa-java" },
                 { text: "Python", icon: "fab fa-python" },
                 { text: "PHP", icon: "fab fa-php" },
