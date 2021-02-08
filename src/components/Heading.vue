@@ -6,10 +6,10 @@
         <div class="itemleft">
           <h1 style="padding-bottom:0; margin-bottom:0">Christopher Kühtz</h1>
           <h4 style="padding-top:0; margin-top:0">Frontend Developer</h4>
-          <h2>Nunnenbeckstraße 32</h2>
-          <h2>90489 Nürnberg</h2>
-          <h2>+4915172109146</h2>
-          <h2>chriskuehtz@gmail.com</h2>
+          <h3>Nunnenbeckstraße 32</h3>
+          <h3>90489 Nürnberg</h3>
+          <h3>+4915172109146</h3>
+          <h3>chriskuehtz@gmail.com</h3>
         </div>
         <div class="itemright">
           <img
