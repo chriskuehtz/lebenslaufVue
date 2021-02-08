@@ -14,7 +14,7 @@
         <input
           id="searchbar"
           type="text"
-          placeholder="Suche nach einem Skill"
+          placeholder="Suche einen Skill"
           v-model="search"
         />
       </div>
@@ -78,14 +78,17 @@ export default {
   padding-left: 5%;
   padding-right: 5%;
   color: #2c3e50;
+
 }
 #searchbar {
-  color: #2c3e50;
+  
   font-size: 2em;
-  border-radius: 0.5em;
+  border-radius: 5px;
   border-style: solid;
   border-width: 1px;
   margin-bottom: 0.5em;
+  max-width:80vw;
+  overflow: hidden;
 }
 .title {
   width: 100%;
@@ -94,6 +97,7 @@ export default {
 .dropButton {
   padding-left: 1em;
 }
+
 .container {
   display: grid;
   align-content: stretch;

@@ -18,6 +18,70 @@ export default {
   data() {
     return {
       stuff: {
+        softwareExperience: {
+          title: "Programmier-Erfahrung",
+          searchbar: true,
+          list: [
+             {
+              name:"Praktikum bei Codecamp:N",
+              daterange: "Okt. 2020 bis Apr. 2021",
+              text:`
+                Für sechs Monate arbeite als Frontend Praktikant bei Codecamp:N im Projekt Meine Vorsorgedokumente.
+                Ich arbeite dort mit Vue.js nach der agilen Scrum Methode. 
+                Aktuell liegt mein Fokus auf der Umsetzung der mobilen Version der Seite und beim Einpflegen einer  SCSS Design Pattern Library.
+                Auch als Praktikant bin ich vollwertiges Mitglied des Scrum Teams und bearbeite meine eigenen Tickets, z.B. die Umsetzung der Mehrfachauswahl auf der Website.
+                `,
+                skills: [
+                { text: "HTML" },
+                { text: "CSS", icon: "fab fa-css3-alt" },
+                { text: "SCSS"},
+                { text: "Bootstrap" },
+                { text: "Javascript", icon: "fab fa-js-square" },
+                { text: "Vue", icon: "fab fa-vuejs" },
+                { text: "Scrum"}
+              ],
+              links: [
+                {
+                  http: "https://meine-vorsorgedokumente.de/",
+                  name: "Meine Vorsorgedokumente",
+                },
+              ],
+
+            },
+            {
+              name: "dev.jetzt Bootcamp",
+              text:
+                "Im März 2020 war ich einer der 12 Teilnehmer im dev.jetzt Bootcamp der Firma Mantro in München. In drei Wochen haben wir einen gesamten Stack von React über Node.js bis zu Postgres Datenbanken kennen gelernt und gleichzeitig viel über Best Practices, Tools und den Alltag in einem Software Unternehmen gelernt.",
+              skills: [
+                { text: "HTML" },
+                { text: "CSS", icon: "fab fa-css3-alt" },
+                { text: "Bootstrap" },
+                { text: "Javascript", icon: "fab fa-js-square" },
+                { text: "React", icon: "fab fa-react" },
+                { text: "Node.js", icon: "fab fa-node-js" },
+                { text: "Postgres" },
+              ],
+              links: [
+                { http: "https://www.dev.jetzt/teilnehmen", name: "dev.jetzt" },
+              ],
+            },
+            {
+              name: "EntwicklerHeld",
+              text:
+                "Auf Entwicklerheld.de löse ich in meiner Freizeit Coding Challenges in fast allen Sprachen und zu verschiedenen Tehmenbereichen. Ich bin (gerade so) unter den Top 100 Nutzern.",
+              skills: [
+                { text: "Javascript", icon: "fab fa-js-square" },
+                { text: "Java", icon: "fab fa-java" },
+                { text: "Python", icon: "fab fa-python" },
+                { text: "PHP", icon: "fab fa-php" },
+                { text: "C++" },
+              ],
+              links: [
+                { http: "https://entwicklerheld.de", name: "Entwicklerheld" },
+              ],
+            },
+          ],
+        },
         projects: {
           title: "Web Development Projekte",
           searchbar: true,
@@ -39,7 +103,7 @@ export default {
                 },
               ],
             },
-            {
+            /*{
               name: "BurgerAI",
               text:
                 "burgerai.de (Burger AI) erstellt durch einen 'supervised learning'  Algorithmus ein Burger Rezept aus 6 Zutaten( Algorithmus), lernt durch jedes heruntergeladene Rezept( positives Feedback), welche Zutaten zusammen passen und nutzt das Gelernte für das nächste Rezept( verbesserter Algorithmus). ",
@@ -52,7 +116,7 @@ export default {
                 { text: "MySQL" },
               ],
               links: [{ http: "http://burgerai.de", name: "BurgerAI.de" }],
-            },
+            },*/
             {
               name: "Groceri",
               text:
@@ -60,6 +124,7 @@ export default {
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
+                { text: "Bootstrap" },
                 { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
                 { text: "Netlify JamStack" },
@@ -101,6 +166,7 @@ export default {
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
+                { text: "Bootstrap" },
                 { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "React", icon: "fab fa-react" },
               ],
@@ -138,42 +204,7 @@ export default {
             },
           ],
         },
-        softwareExperience: {
-          title: "Andere Programmier-Erfahrung",
-          list: [
-            {
-              name: "dev.jetzt Bootcamp",
-              text:
-                "Im März dieses Jahres war ich einer der 12 Teilnehmer im dev.jetzt Bootcamp der Firma Mantro in München. In drei Wochen haben wir einen gesamten Stack von React über Node.js bis zu Postgres Datenbanken kennen gelernt und gleichzeitig viel über Best Practices, Tools und den Alltag in einem Software Unternehmen gelernt.",
-              skills: [
-                { text: "HTML" },
-                { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "Javascript", icon: "fab fa-js-square" },
-                { text: "React", icon: "fab fa-react" },
-                { text: "Node.js", icon: "fab fa-node-js" },
-                { text: "Postgres" },
-              ],
-              links: [
-                { http: "https://www.dev.jetzt/teilnehmen", name: "dev.jetzt" },
-              ],
-            },
-            {
-              name: "EntwicklerHeld",
-              text:
-                "Auf Entwicklerheld.de löse ich in meiner Freizeit Coding Challenges in fast allen Sprachen und zu verschiedenen Tehmenbereichen. Ich bin (gerade so) unter den Top 100 Nutzern.",
-              skills: [
-                { text: "Javascript", icon: "fab fa-js-square" },
-                { text: "Java", icon: "fab fa-java" },
-                { text: "Python", icon: "fab fa-python" },
-                { text: "PHP", icon: "fab fa-php" },
-                { text: "C++" },
-              ],
-              links: [
-                { http: "https://entwicklerheld.de", name: "Entwicklerheld" },
-              ],
-            },
-          ],
-        },
+        
         education: {
           title: "Studium",
           list: [
@@ -233,5 +264,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+  font-size:120%;
 }
 </style>
