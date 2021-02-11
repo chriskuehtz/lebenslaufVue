@@ -270,6 +270,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 4rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   font-size: 120%;
   max-width: 1440px;
   margin: auto;
