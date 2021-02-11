@@ -1,23 +1,26 @@
 <template>
-  <div id="segment">
-    <div class="title">
-      <h1 @click="setCollapsed()">
-        {{ data.title }}
-        <span class="dropButton" v-if="collapsed === true">
-          <i class="fas fa-caret-down"></i>
-        </span>
-        <span class="dropButton" v-else> <i class="fas fa-caret-up"></i> </span>
+  <div class="segment">
+    <div class="titlebox" @click="setCollapsed()">
+      <h1 class="title">
+        {{
+          breakpoints.sm && data.hasOwnProperty("titleSmall")
+            ? data.titleSmall
+            : data.title
+        }}
       </h1>
+      <i
+        class="caret"
+        :class="collapsed ? 'fas fa-caret-down' : 'fas fa-caret-up'"
+      ></i>
     </div>
     <div v-if="collapsed === false">
-      <div v-if="data.hasOwnProperty('searchbar')">
-        <input
-          id="searchbar"
-          type="text"
-          placeholder="Suche einen Skill"
-          v-model="search"
-        />
-      </div>
+      <input
+        v-if="data.hasOwnProperty('searchbar')"
+        class="searchbar"
+        type="text"
+        placeholder="Suche einen Skill"
+        v-model="search"
+      />
 
       <div v-if="search === ''">
         <div class="container">
@@ -39,7 +42,7 @@
             :key="l"
           >
             <div class="item">
-              <Card :data="l" />
+              <Card :data="l" :breakpoints="breakpoints" />
             </div>
           </div>
         </div>
@@ -57,6 +60,7 @@ export default {
   components: { Card },
   props: {
     data: Object,
+    breakpoints: Array,
   },
   data() {
     return { collapsed: true, search: "" };
@@ -70,34 +74,32 @@ export default {
 </script>
 
 <style>
-#segment {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  padding-left: 5%;
-  padding-right: 5%;
-  color: #2c3e50;
-
-}
-#searchbar {
-  
-  font-size: 2em;
-  border-radius: 5px;
+.searchbar {
+  font-size: 2rem;
+  color: black;
+  border-radius: 0.5rem;
   border-style: solid;
   border-width: 1px;
-  margin-bottom: 0.5em;
-  max-width:80vw;
+  margin-bottom: 0.5rem;
+  width: clamp(40vw, 90%, 480px);
   overflow: hidden;
 }
-.title {
+.titlebox {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   border-top: 1px solid #2c3e50;
 }
-.dropButton {
-  padding-left: 1em;
+.title {
+  width: 80%;
 }
-
+.caret {
+  margin: auto;
+  font-size: 2.5rem;
+  width: 20%;
+  height: 20%;
+}
 .container {
   display: grid;
   align-content: stretch;
