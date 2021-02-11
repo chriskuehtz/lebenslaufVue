@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Heading :breakpoints="breakpoints" />
-    <div v-for="x in stuff" :key="x.title"><Segment :data="x" /></div>
+    <div v-for="x in stuff" :key="x.title">
+      <Segment :data="x" :breakpoints="breakpoints" />
+    </div>
   </div>
 </template>
 
@@ -90,6 +92,7 @@ export default {
         },
         projects: {
           title: "Web Development Projekte",
+          titleSmall: "Web Dev Projekte",
           searchbar: true,
           list: [
             {
@@ -210,7 +213,6 @@ export default {
             },
           ],
         },
-
         education: {
           title: "Studium",
           list: [
@@ -235,6 +237,7 @@ export default {
         },
         jobExperience: {
           title: "Arbeitserfahrung",
+          titleSmall: "Arbeits-Erfahrung",
           list: [
             {
               name: "Mitarbeiter bei Nosi-Shop.com",
