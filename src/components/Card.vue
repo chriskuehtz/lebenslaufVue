@@ -1,12 +1,14 @@
 <template>
   <div class="card">
-    <h1 @click="setCollapsed()">
-      {{ data.name }}
-      <span class="dropButton" v-if="collapsed === true">
-        <i class="fas fa-caret-down"></i>
-      </span>
-      <span class="dropButton" v-else> <i class="fas fa-caret-up"></i> </span>
-    </h1>
+    <div class="titlebox no-border" @click="setCollapsed()">
+      <h1 class="title w100 center">
+        {{ data.name }}
+      </h1>
+      <i
+        class="caret w100 center"
+        :class="collapsed ? 'fas fa-caret-down' : 'fas fa-caret-up'"
+      ></i>
+    </div>
     <div v-if="collapsed === false">
       <div v-if="data.hasOwnProperty('daterange')">
         <p>{{ data.daterange }}</p>
@@ -31,6 +33,7 @@ export default {
   components: { LinkBox, SkillBox },
   props: {
     data: Object,
+    breakpoints: Array,
   },
   data() {
     return { collapsed: true };
@@ -51,5 +54,14 @@ export default {
 
   margin: 0.5em;
   margin-left: 0;
+}
+.w100 {
+  width: 100% !important;
+}
+.center {
+  text-align: center;
+}
+.no-border {
+  border: none !important;
 }
 </style>

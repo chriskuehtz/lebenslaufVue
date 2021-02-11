@@ -26,7 +26,7 @@
         <div class="container">
           <div v-for="l in data.list" :key="l">
             <div class="item">
-              <Card :data="l" />
+              <Card :data="l" :breakpoints="breakpoints" />
             </div>
           </div>
         </div>
