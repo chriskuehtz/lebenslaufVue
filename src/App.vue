@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Heading />
+    <Heading :breakpoints="breakpoints" />
     <div v-for="x in stuff" :key="x.title"><Segment :data="x" /></div>
   </div>
 </template>
@@ -17,28 +17,35 @@ export default {
   },
   data() {
     return {
+      breakpoints: {
+        xs: window.innerWidth < 400,
+        sm: window.innerWidth < 768,
+        md: window.innerWidth < 1024,
+        lg: window.innerWidth < 1440,
+        xl: window.innerWidth >= 1440,
+      },
       stuff: {
         softwareExperience: {
           title: "Programmier-Erfahrung",
           searchbar: true,
           list: [
-             {
-              name:"Praktikum bei Codecamp:N",
+            {
+              name: "Praktikum bei Codecamp:N",
               daterange: "Okt. 2020 bis Apr. 2021",
-              text:`
+              text: `
                 Für sechs Monate arbeite als Frontend Praktikant bei Codecamp:N im Projekt Meine Vorsorgedokumente.
                 Ich arbeite dort mit Vue.js nach der agilen Scrum Methode. 
                 Aktuell liegt mein Fokus auf der Umsetzung der mobilen Version der Seite und beim Einpflegen einer  SCSS Design Pattern Library.
                 Auch als Praktikant bin ich vollwertiges Mitglied des Scrum Teams und bearbeite meine eigenen Tickets, z.B. die Umsetzung der Mehrfachauswahl auf der Website.
                 `,
-                skills: [
+              skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "SCSS"},
+                { text: "SCSS" },
                 { text: "Bootstrap" },
                 { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "Vue", icon: "fab fa-vuejs" },
-                { text: "Scrum"}
+                { text: "Scrum" },
               ],
               links: [
                 {
@@ -46,7 +53,6 @@ export default {
                   name: "Meine Vorsorgedokumente",
                 },
               ],
-
             },
             {
               name: "dev.jetzt Bootcamp",
@@ -204,7 +210,7 @@ export default {
             },
           ],
         },
-        
+
         education: {
           title: "Studium",
           list: [
@@ -263,7 +269,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
-  font-size:120%;
+  margin-top: 4rem;
+  font-size: 120%;
+  max-width: 1440px;
+  margin: auto;
 }
 </style>
