@@ -92,13 +92,12 @@ export default {
   border-top: 1px solid #2c3e50;
 }
 .title {
-  width: 80%;
+  width: 90%;
 }
 .caret {
   margin: auto;
   font-size: 2.5rem;
-  width: 20%;
-  height: 20%;
+  width: 10%;
 }
 .container {
   display: grid;
