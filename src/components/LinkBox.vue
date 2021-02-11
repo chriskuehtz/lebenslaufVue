@@ -25,15 +25,15 @@ export default {
 
 <style>
 .linkContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
-}
-
-.item {
-  padding-right: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .link {
   color: #2c3e50;
+  font-size: 1.5rem;
   text-decoration-line: none;
+  margin-left: 1rem;
+  margin-right: 2rem;
 }
 </style>

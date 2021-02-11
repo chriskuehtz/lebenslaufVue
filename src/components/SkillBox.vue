@@ -1,5 +1,5 @@
 <template>
-  <div id="skillbox">
+  <div>
     <h3>Skills:</h3>
     <div class="skillContainer">
       <div v-for="l in data" :key="l.text">
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "linkbox",
+  name: "skillbox",
   components: {},
   props: {
     data: Array,
@@ -25,22 +25,15 @@ export default {
 </script>
 
 <style>
-#segment {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: #2c3e50;
-}
-
 .skillContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27%, 1fr));
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .skill {
-  padding-right: 0.5em;
-  min-width: 50%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  width: clamp(140px, 200px, 100%);
 }
 </style>
