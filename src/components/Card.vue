@@ -46,22 +46,4 @@ export default {
 };
 </script>
 
-<style>
-.card {
-  border: 1px solid #2c3e50;
-  border-radius: 5px;
-  padding: 0.5em;
-
-  margin: 0.5em;
-  margin-left: 0;
-}
-.w100 {
-  width: 100% !important;
-}
-.center {
-  text-align: center;
-}
-.no-border {
-  border: none !important;
-}
-</style>
+<style></style>
