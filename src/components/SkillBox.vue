@@ -6,7 +6,7 @@
         <div class="skill">
           <p>
             {{ l.text }}
-            <i v-if="l.hasOwnProperty('icon')" v-bind:class="l.icon"></i>
+            <i class="icon" v-if="l.hasOwnProperty('icon')" :class="l.icon"></i>
           </p>
         </div>
       </div>
@@ -28,6 +28,9 @@ export default {
 .skillContainer {
   display: flex;
   flex-wrap: wrap;
+}
+.icon {
+  color: var(--my-accent-color);
 }
 
 .skill {

@@ -1,7 +1,7 @@
 <template>
   <div class="segment">
     <div class="titlebox" @click="setCollapsed()">
-      <h1 class="title">
+      <h1 class="title" :class="collapsed ? '' : 'accent'">
         {{
           breakpoints.sm && data.hasOwnProperty("titleSmall")
             ? data.titleSmall
@@ -10,7 +10,7 @@
       </h1>
       <i
         class="caret"
-        :class="collapsed ? 'fas fa-caret-down' : 'fas fa-caret-up'"
+        :class="collapsed ? 'fas fa-caret-down' : 'fas fa-caret-up accent'"
       ></i>
     </div>
     <div v-if="collapsed === false">
@@ -39,7 +39,7 @@
                 .map((s) => s.text.toLowerCase())
                 .includes(search.toLowerCase())
             )"
-            :key="l"
+            :key="l[1]"
           >
             <div class="item">
               <Card :data="l" :breakpoints="breakpoints" />
@@ -60,7 +60,7 @@ export default {
   components: { Card },
   props: {
     data: Object,
-    breakpoints: Array,
+    breakpoints: Object,
   },
   data() {
     return { collapsed: true, search: "" };
@@ -76,7 +76,9 @@ export default {
 <style>
 .searchbar {
   font-size: 2rem;
-  color: black;
+  background-color: var(--my-bg-color);
+  color: var(--my-color);
+  border-color: var(--my-accent-color);
   border-radius: 0.5rem;
   border-style: solid;
   border-width: 1px;
@@ -84,12 +86,16 @@ export default {
   width: clamp(40vw, 90%, 480px);
   overflow: hidden;
 }
+::placeholder {
+  color: var(--my-color);
+  opacity: 1;
+}
 .titlebox {
   display: flex; /* or inline-flex */
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  border-top: 1px solid #2c3e50;
+  border-top: 1px solid var(--my-color);
 }
 .title {
   width: 90%;
@@ -106,10 +112,9 @@ export default {
 }
 
 .card {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--my-accent-color);
   border-radius: 5px;
   padding: 0.5em;
-
   margin: 0.5em;
   margin-left: 0;
 }

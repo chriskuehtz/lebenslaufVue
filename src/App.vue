@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <button class="toggleDarkMode" @click="() => toggleDark()">
+      <span>{{ darkMode ? "light" : "dark" }}</span>
+    </button>
     <Heading :breakpoints="breakpoints" />
     <div v-for="x in stuff" :key="x.title">
       <Segment :data="x" :breakpoints="breakpoints" />
@@ -19,6 +22,7 @@ export default {
   },
   data() {
     return {
+      darkMode: false,
       breakpoints: {
         xs: window.innerWidth < 400,
         sm: window.innerWidth < 768,
@@ -263,20 +267,68 @@ export default {
       },
     };
   },
+  methods: {
+    toggleDark() {
+      this.darkMode = !this.darkMode;
+      if (this.darkMode) {
+        document.querySelector("body").classList.add("darkMode");
+      } else {
+        document.querySelector("body").classList.remove("darkMode");
+      }
+    },
+  },
 };
 </script>
 
 <style>
+/*Dark Mode*/
+:root {
+  --my-color: #2c3e50;
+  --my-bg-color: white;
+  --my-accent-color: rgb(168, 14, 40);
+}
+.darkMode {
+  --my-bg-color: #111111;
+  --my-color: rgb(235, 231, 215);
+  --my-accent-color: rgb(14, 168, 155);
+}
+body {
+  color: var(--my-color);
+  background-color: var(--my-bg-color);
+}
+.toggleDarkMode {
+  color: var(--my-color);
+  background-color: var(--my-bg-color);
+  border: solid 2px var(--my-accent-color);
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 3rem;
+}
+.toggleDarkMode:focus {
+  outline: none;
+}
+/*General*/
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 4rem;
   padding-right: 1rem;
   padding-left: 1rem;
   font-size: 120%;
   max-width: 1440px;
   margin: auto;
+}
+/*Utilities*/
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.accent {
+  color: var(--my-accent-color);
 }
 </style>

@@ -30,7 +30,7 @@ export default {
   flex-wrap: wrap;
 }
 .link {
-  color: #2c3e50;
+  color: var(--my-accent-color);
   font-size: 1.5rem;
   text-decoration-line: none;
   margin-left: 1rem;
