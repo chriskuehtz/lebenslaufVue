@@ -13,7 +13,10 @@
       <div v-if="data.hasOwnProperty('daterange')">
         <p>{{ data.daterange }}</p>
       </div>
-      <p>{{ data.text }}</p>
+      <div v-for="t in data.text" :key="t">
+        <p>{{ t }}</p>
+      </div>
+
       <div v-if="data.hasOwnProperty('skills')">
         <SkillBox :data="data.skills" />
       </div>
