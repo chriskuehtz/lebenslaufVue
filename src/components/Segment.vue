@@ -14,13 +14,15 @@
       ></i>
     </div>
     <div v-if="collapsed === false">
-      <input
-        v-if="data.hasOwnProperty('searchbar')"
-        class="searchbar"
-        type="text"
-        placeholder="Suche einen Skill"
-        v-model="search"
-      />
+      <div class="container">
+        <input
+          v-if="data.hasOwnProperty('searchbar')"
+          class="searchbar"
+          type="text"
+          placeholder="Suche einen Skill"
+          v-model="search"
+        />
+      </div>
 
       <div v-if="search === ''">
         <div class="container">
@@ -82,8 +84,9 @@ export default {
   border-radius: 0.5rem;
   border-style: solid;
   border-width: 1px;
-  margin-bottom: 0.5rem;
-  width: clamp(40vw, 90%, 480px);
+  margin: 0.5rem;
+  margin-left: 0;
+  max-width: 480px !important;
   overflow: hidden;
 }
 ::placeholder {
@@ -114,8 +117,8 @@ export default {
 .card {
   border: 1px solid var(--my-accent-color);
   border-radius: 5px;
-  padding: 0.5em;
-  margin: 0.5em;
+  padding: 0.5rem;
+  margin: 0.5rem;
   margin-left: 0;
 }
 </style>
