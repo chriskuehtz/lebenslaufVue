@@ -116,20 +116,6 @@ export default {
                 },
               ],
             },
-            /*{
-              name: "BurgerAI",
-              text:
-                "burgerai.de (Burger AI) erstellt durch einen 'supervised learning'  Algorithmus ein Burger Rezept aus 6 Zutaten( Algorithmus), lernt durch jedes heruntergeladene Rezept( positives Feedback), welche Zutaten zusammen passen und nutzt das Gelernte für das nächste Rezept( verbesserter Algorithmus). ",
-              skills: [
-                { text: "HTML" },
-                { text: "CSS", icon: "fab fa-css3-alt" },
-                { text: "Bootstrap CSS" },
-                { text: "Javascript", icon: "fab fa-js-square" },
-                { text: "PHP", icon: "fab fa-php" },
-                { text: "MySQL" },
-              ],
-              links: [{ http: "http://burgerai.de", name: "BurgerAI.de" }],
-            },*/
             {
               name: "Groceri",
               text:
@@ -330,5 +316,14 @@ body {
 }
 .accent {
   color: var(--my-accent-color);
+}
+.w100 {
+  width: 100% !important;
+}
+.center {
+  text-align: center;
+}
+.no-border {
+  border: none !important;
 }
 </style>
