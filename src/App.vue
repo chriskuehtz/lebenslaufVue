@@ -537,7 +537,7 @@ export default {
 /*Dark Mode*/
 :root {
   --my-color: #2c3e50;
-  --my-bg-color: rgb(233, 232, 227);
+  --my-bg-color: white;
   --my-accent-color: rgb(168, 14, 40);
 }
 .darkMode {
