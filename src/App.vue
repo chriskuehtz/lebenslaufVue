@@ -3,21 +3,21 @@
     <button class="toggleDarkMode" @click="() => toggleDark()">
       <span>{{ darkMode ? "light" : "dark" }}</span>
     </button>
-    <!--<button class="toggleEnglish" @click="() => (english = !english)">
+    <button class="toggleEnglish" @click="() => (english = !english)">
       <span>{{ english ? "DE" : "ENG" }}</span>
-    </button>-->
+    </button>
     <Heading
       :data="english ? personalEnglish : personalDeutsch"
       :breakpoints="breakpoints"
     />
     <div v-if="english">
       <div v-for="x in eng" :key="x.title">
-        <Segment :data="x" :breakpoints="breakpoints" />
+        <Segment :data="x" :breakpoints="breakpoints" :english="true" />
       </div>
     </div>
     <div v-else>
       <div v-for="x in de" :key="x.title">
-        <Segment :data="x" :breakpoints="breakpoints" />
+        <Segment :data="x" :breakpoints="breakpoints" :english="false" />
       </div>
     </div>
   </div>
@@ -99,6 +99,30 @@ export default {
               ],
               links: [
                 { http: "https://www.dev.jetzt/teilnehmen", name: "dev.jetzt" },
+              ],
+            },
+            {
+              name: "Fullstack Open 2020/21",
+              daterange: "Jan. 2020, noch nicht beendet",
+              text: [
+                "Online Kurs der Universität von Helsinki",
+                "11 ausführliche Lessons über moderne Web Dev Tools und Konzepte",
+                "Echte Hausaufgaben, die tatsächlich korrigiert werden",
+              ],
+              skills: [
+                { text: "Javascript", icon: "fab fa-js-square" },
+                { text: "React", icon: "fab fa-react" },
+                { text: "Typescript" },
+                { text: "Node" },
+                { text: "Redux" },
+                { text: "GraphQL" },
+                { text: "ReactNative" },
+              ],
+              links: [
+                {
+                  http: "https://fullstackopen.com/en/about",
+                  name: "Fullstack Open",
+                },
               ],
             },
             {
@@ -300,17 +324,18 @@ export default {
       },
       eng: {
         softwareExperience: {
-          title: "Developer Experience",
+          title: "Web Dev Experience",
           searchbar: true,
           list: [
             {
-              name: "Internship Codecamp:N",
-              daterange: "Oct. 2020 through Mar. 2021",
-              text: `
-                I am currently a frontend development intern at Codecamp:N.
-                My team develops the vue application for meine-vorsorgedokumente.de using Scrum for workflow managment and Github for version control.
-                Meine Vorsorgedokumente allows the user to document their medical and legal preferences in case of an injury that leaves them incapable of expressing their will in person.
-                We create valid legal documents, that are accessible 24/7 through our online platform.`,
+              name: "Internship at Codecamp:N",
+              daterange: "Oct. 2020 until Apr. 2021",
+              text: [
+                "I am spending 6 months as an intern at codecamp:n, working on the project Meine Vorsorgedokumente",
+                "I develop new features for their Vue.js frontend application, using agile workflows/Scrum",
+                "Currently, my focus is on implementing the mobile site and refactoring all styles into a singular design pattern library",
+                "Even though i am an intern, i get treated as a full team member and i am responsible for my own tickets",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -329,8 +354,10 @@ export default {
             },
             {
               name: "dev.jetzt Bootcamp",
-              text: `In march 2020, i was one of 12 participants in mantro's free coding bootcamp dev.jetzt (dev.now).
-                Over the course of 3 weeks, we were introduced to `,
+              text: [
+                "In March 2020, i participated in the dev.jetzt Bootcamp at the offices of the company mantro in munich",
+                "Over the course of three weeks, we were introduced to a full modern web stack (React, Node/Express, MongoDB), as well as development best practices and the day to day business at a software company",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -345,9 +372,36 @@ export default {
               ],
             },
             {
+              name: "Fullstack Open 2020/21",
+              daterange: "Jan. 2020, ongoing",
+              text: [
+                "Free online class at University of Helsinki",
+                "11 extensive Lessons about moderne Web Dev Tools and Concepts",
+                "Real Homework, that actually gets corrected/tested",
+              ],
+              skills: [
+                { text: "Javascript", icon: "fab fa-js-square" },
+                { text: "React", icon: "fab fa-react" },
+                { text: "Typescript" },
+                { text: "Node" },
+                { text: "Redux" },
+                { text: "GraphQL" },
+                { text: "ReactNative" },
+              ],
+              links: [
+                {
+                  http: "https://fullstackopen.com/en/about",
+                  name: "Fullstack Open",
+                },
+              ],
+            },
+            {
               name: "EntwicklerHeld",
-              text:
-                "Auf Entwicklerheld.de löse ich in meiner Freizeit Coding Challenges in fast allen Sprachen und zu verschiedenen Tehmenbereichen. Ich bin (gerade so) unter den Top 100 Nutzern.",
+              text: [
+                "Entwicklerheld (Developer Hero) is an online platform where coders solve all kinds of programming challenges",
+                "The challenges are sponsored by companies and you solution is sent to the company",
+                "If the company likes your code, they can invite you for an interview",
+              ],
               skills: [
                 { text: "Javascript", icon: "fab fa-js-square" },
                 { text: "Java", icon: "fab fa-java" },
@@ -362,14 +416,14 @@ export default {
           ],
         },
         projects: {
-          title: "Web Development Projekte",
-          titleSmall: "Web Dev Projekte",
+          title: "Web Dev Projects",
           searchbar: true,
           list: [
             {
-              name: "Dieser Lebenslauf",
-              text:
-                "Um die Grundlagen von Vue.js zu lernen und um eine dynamische,informative Bewerbung einzureichen, habe ich meinen Lebenslauf als Vue Applikation geschrieben.",
+              name: "This CV",
+              text: [
+                "To learn the basics of vue.js and to submit a more informative application that highlights my skills, i wrote my CV as a vue app",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -385,8 +439,11 @@ export default {
             },
             {
               name: "Groceri",
-              text:
-                "Groceri hilft dir, deinen Trip zum Supermarkt effizienter zu gestalten (gerade zur Zeit sehr nützlich), indem du deine Einkaufsliste in Kategorien(Obst, Fleisch, etc.) einteilst und wöchentliche,monatliche Vorräte automatisch hinzufügen lässt. So kommst du schneller durch den Einkauf. Zum ausprobieren kannst du User:guest und Passwort:guest verwenden.",
+              text: [
+                "Groceri streamlines your supermarket trip by allowing you to sort your shopping list into categories and adding weekly staples automatically",
+                "By having all items from the same aisle in one category, you can shop faster and have to check your phone less, while driving the shopping cart",
+                "User: guest, PW: guest to try it",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -406,8 +463,11 @@ export default {
             },
             {
               name: "Pokemon Map Maker",
-              text:
-                "Ich arbeite zusammen mit meiner Freundin an einem Pokemon Spiel, das wir zu zweit spielen können. Um die Maps für das Spiel zu erstellen, habe ich eine React Application geschrieben. Applikationen wie diese zeigen, wozu moderne Frontend Frameworks in der Lage sind und das der Browser in gewisser Weise das neue Betriebssystem ist.",
+              text: [
+                "Me and my girlfriend are working on a pokemon game that we can play together",
+                "In order to create the maps in json format, i wrote a react app",
+                "This application really taught me, what modern frameworks are capable of and how the browser is, in many ways, the new OS",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -427,8 +487,10 @@ export default {
             },
             {
               name: "Pokemon Battle System",
-              text:
-                "Das Kampf System für das Pokemon Spiel. Dieses System ist die beste Programmierübung, die ich bis jetzt hatte. Jede Runde jedes Kampfes muss mit vielen verschiedenen Parametern und Ausnahmefällen trotzdem gleich ablaufen. ",
+              text: [
+                "This has been the best logic exercise in my programming career",
+                "Each round of the fight has to start and end the same way, while handling many different variables in between (who moves first, did a pokemon faint, etc)",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -449,8 +511,9 @@ export default {
             },
             {
               name: "Hopfengarten",
-              text:
-                "Eine kleine Applikation basierend auf meinem Homebrewing Hobby, um die Grundlagen von Angular zu lernen",
+              text: [
+                "A small angular site about my homebrewing hobby, to learn the basics of angular",
+              ],
               skills: [
                 { text: "HTML" },
                 { text: "CSS", icon: "fab fa-css3-alt" },
@@ -471,49 +534,50 @@ export default {
           ],
         },
         education: {
-          title: "Studium",
+          title: "University",
           list: [
             {
               name:
                 "B.Sc. International Production Engineering and Management, FAU Erlangen",
-              daterange: "Okt. 2015-Okt. 2019 (ohne Abschluss)",
-              text: `2015 habe ich mein Studium im Fach International Production Engineering and Management
-                in Erlangen begonnen. Nachdem ich Ende 2018 meine Bachelorarbeit mit der Note 1,6 abgeschlossen hatte,
-                habe ich 2019 den letzten Versuch für eine meiner Prüfungen nicht bestanden und musste das Studium ohne Abschluss beenden.
-                Dieses Ereignis ist die größte Niederlage in meiner Berufs- und Studienlaufbahn.
-                Ich habe daraus gelernt, dass mein späterer Beruf in einem Feld sein muss,
-                das mir Freude und Erfüllung bringt und zu dem ich voll und ganz stehe. Deshalb strebe ich jetzt eine Karriere als Software Developer an, da das Programmieren für mich ein klarer Ausdruck meiner Kreativität ist und mir Tag für Tag Spaß macht`,
+              daterange: "Oct. 2015-Oct. 2019 (no degree)",
+              text: [
+                "Wrote my bachelors thesis, in english, about a new automated manufacturing process for a joined project between adidas and the university.",
+                "Finished my bachelor thesis in december 2018 with a grade of 1.6 (A- i guess, grading from 1-6 where 6=F)",
+                "Failed my last try for one of my last exams in april 2019",
+                "Had to leave the program without a degree",
+              ],
             },
             {
-              name: "B.Sc Mechatronik, FAU Erlangen",
-              daterange: "seit Okt. 2019",
-              text:
-                "aktuell studiere ich Mechatronik um meinen Bachelor Abschluss zu erhalten, da ich mir einige Leistungen aus dem vorherigen Studium anrechnen lassen konnte, aber mein Ziel ist eine Karriere als Software Entwickler.",
+              name: "B.Sc Mechatronics, FAU Erlangen",
+              daterange: "since Oct. 2019",
+              text: [
+                "Joined the mechatronics programm at the same school to transfer some credits, including my bachelors thesis and finish my degree.",
+              ],
             },
           ],
         },
         jobExperience: {
-          title: "Arbeitserfahrung",
-          titleSmall: "Arbeits-Erfahrung",
+          title: "Other Work Experience",
           list: [
             {
-              name: "Mitarbeiter bei Nosi-Shop.com",
-              daterange: "Jan. 2014-Jun.2015",
-              text: `nach meinem Abitur 2013 war ich unsicher was ich studieren sollte und habe zusammen mit
-                meinem Vater an Nosi-Shop.com, seinem Online-Handel für Sicherheitsartikel und Hausdekorationen
-                gearbeitet. Ich war hauptsächlich für die Bestellungsabwicklung und Kommunikation mit Kunden zuständig,
-                bis ich 2015 für mein Studium nach Erlangen gezogen bin.`,
+              name: "Employee at Nosi-Shop.com",
+              daterange: "Jan.2014 - Jun.2015",
+              text: [
+                "After finishing highschool in 2013, i had not decided on a career path",
+                "So i worked with my father at his online shop for home security and design products",
+              ],
             },
             {
-              name: "Praktikum bei Roche Diagnostics",
-              daterange: "Feb. 2017-Apr.2017",
-              text: `Ich habe zwei Monate als Praktikant bei Roche Diagnostics, einem der weltweit größten Hersteller für medizinische Geräte, in der Niederlassung in Sant Cugat, Spanien verbracht. Dort habe ich in der Abteilung Customer Support and Repairs gearbeitet.`,
+              name: "Internship at Roche Diagnostics",
+              daterange: "Feb.2017 - Apr.2017",
+              text:
+                "I spent two months at Roche Diagnostics' repair and maintenance center for large scale medical devices in San Cugat, Spain",
             },
             {
-              name: "Recherche Mitarbeiter bei Future.Ing",
+              name: "Student Researcher at Future.Ing",
               daterange: "Okt. 2017-Dez.2017",
               text:
-                'Als Recherche Mitarbeiter beim Erlanger Start Up "Future.ING" habe ich wissenschaftliche Recherche zum Thema Phase-Change Materials betrieben.',
+                "I conducted scientific research about phase change materials and their applications for the student founded start-up future.ing in my university town.",
             },
           ],
         },
@@ -554,9 +618,9 @@ body {
   background-color: var(--my-bg-color);
   border: solid 2px var(--my-accent-color);
   border-radius: 0.5rem;
-  /*border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  border-right: none;*/
+  border-right: none;
   height: 2rem;
   width: 3rem;
 }
@@ -582,7 +646,7 @@ body {
   padding-right: 1rem;
   padding-left: 1rem;
   font-size: 120%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 /*Utilities*/

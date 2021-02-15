@@ -19,7 +19,7 @@
           v-if="data.hasOwnProperty('searchbar')"
           class="searchbar"
           type="text"
-          placeholder="Suche einen Skill"
+          :placeholder="english ? 'Look for a skill' : 'Suche einen Skill'"
           v-model="search"
         />
       </div>
@@ -63,6 +63,7 @@ export default {
   props: {
     data: Object,
     breakpoints: Object,
+    english: Boolean,
   },
   data() {
     return { collapsed: true, search: "" };
