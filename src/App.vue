@@ -81,7 +81,6 @@ export default {
                   name: "Meine Vorsorgedokumente",
                 },
               ],
-              highlight:true,
             },
             {
               name: "dev.jetzt Bootcamp",
