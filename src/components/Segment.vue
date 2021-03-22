@@ -25,8 +25,15 @@
       </div>
 
       <div v-if="search === ''">
+        <div class="container highlight">
+          <div v-for="l in data.list.filter(d=>d.highlight)" :key="l">
+            <div class="item">
+              <Card :data="l" :breakpoints="breakpoints" />
+            </div>
+          </div>
+        </div>
         <div class="container">
-          <div v-for="l in data.list" :key="l">
+          <div v-for="l in data.list.filter(d=>!d.highlight)" :key="l">
             <div class="item">
               <Card :data="l" :breakpoints="breakpoints" />
             </div>
@@ -114,12 +121,18 @@ export default {
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
+.container-highlight {
+  display: grid;
+  align-content: stretch;
+}
 .card {
   border: 1px solid var(--my-accent-color);
   border-radius: 5px;
   padding: 0.5rem;
   margin: 0.5rem;
   margin-left: 0;
+}
+.card-highlight {
+  border: 3px solid var(--my-accent-color);
 }
 </style>

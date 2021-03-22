@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="data.highlight?'card-highlight':''">
     <div class="titlebox no-border" @click="setCollapsed()">
       <h1 class="title w100 center">
         {{ data.name }}
