@@ -26,14 +26,14 @@
 
       <div v-if="search === ''">
         <div class="container highlight">
-          <div v-for="l in data.list.filter(d=>d.highlight)" :key="l">
+          <div v-for="l in data.list.filter((d) => d.highlight)" :key="l">
             <div class="item">
               <Card :data="l" :breakpoints="breakpoints" />
             </div>
           </div>
         </div>
-        <div class="container">
-          <div v-for="l in data.list.filter(d=>!d.highlight)" :key="l">
+        <div :class="breakpoints.sm ? 'container-mobile' : 'container'">
+          <div v-for="l in data.list.filter((d) => !d.highlight)" :key="l">
             <div class="item">
               <Card :data="l" :breakpoints="breakpoints" />
             </div>
@@ -119,8 +119,15 @@ export default {
 .container {
   display: grid;
   align-content: stretch;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
 }
+
+.container-mobile {
+  display: grid;
+  align-content: stretch;
+  grid-template-columns: 1fr;
+}
+
 .container-highlight {
   display: grid;
   align-content: stretch;
