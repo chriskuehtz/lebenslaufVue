@@ -47,8 +47,8 @@ export default {
       personalDeutsch: {
         name: "Christopher Kühtz",
         tagline: "Frontend Developer",
-        adress: "Nunnenbeckstraße 32",
-        city: "90489 Nürnberg",
+        adress: "Schanzenstraße 23",
+        city: "90478 Nürnberg",
         mobile: "+4915172109146",
         email: "chriskuehtz@gmail.com",
       },
