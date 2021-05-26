@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       darkMode: false,
-      english: false,
+      english: true,
       breakpoints: {
         xs: window.innerWidth < 360,
         sm: window.innerWidth < 768,
